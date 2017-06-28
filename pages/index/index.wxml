@@ -1,13 +1,46 @@
 <!--index.wxml-->
 <view class="container">
-  <swiper indicator-dots="{{indicatorDots}}"
-    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <swiper indicator-dots="{{swiper.indicatorDots}}" indicator-color="{{swiper.indicatorColor}}" indicator-active-color="{{swiper.inicatorActiveColor}}"
+    autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}">
     <block wx:for="{{imgUrls}}">
       <swiper-item>
-        <image src="{{item}}" class="slide-image" width="355" height="150"/>
+        <image src="{{item}}" class="slide-image"/>
       </swiper-item>
     </block>
   </swiper>
+
+  <view class="nav-list">
+    <view class="nav-list-item">
+      <image src="../../images/diamond.svg"></image>
+      <text>热门</text>
+    </view>
+    <view class="nav-list-item" bindtap="goAlbumsList">
+      <image src="../../images/album.svg"></image>
+      <text>专辑</text>
+    </view>
+    <view class="nav-list-item">
+      <image src="../../images/tag.svg"></image>
+      <text>标签</text>
+    </view>
+    <view class="nav-list-item">
+      <image src="../../images/star.svg"></image>
+      <text>收藏</text>
+    </view>
+  </view>
+
+  <view class="labels-thumb-view" wx:for="{{labelThumbs}}" wx:key="label">
+    <view class="label-thumb-title">
+       {{item.label}}
+    </view>
+    <view class="label-thumb-list" >
+      <view class="label-thumb-item" wx:for="{{item.list}}" wx:key="_id" bindtap="goPlay" data-story="{{item}}">
+        <view class="img-wrapper">
+          <image src="{{imgServer + '/' + item.cover + '.png@w_120'}}" class="story-image" />
+        </view>
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+  </view>
 
   <view  bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>

@@ -1,7 +1,9 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/player/index",
+    "pages/albumlist/index",
+    "pages/album/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

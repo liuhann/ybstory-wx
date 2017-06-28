@@ -1,3 +1,14 @@
+swiper {
+  width: 750rpx;
+  height: 375rpx;
+  display: block;
+}
+
+swiper image {
+  width: 750rpx;
+  height: 375rpx;
+}
+
 /**index.wxss**/
 .userinfo {
   display: flex;
@@ -18,4 +29,55 @@
 
 .usermotto {
   margin-top: 200px;
+}
+
+.label-thumb-title {
+  border-top: 1px solid #eee;
+  margin-top: 10px;
+  padding: 3vw;
+  color: #FA860B;
+}
+
+.label-thumb-list {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.label-thumb-list .label-thumb-item {
+  width: 33vw;
+  padding: 3vw;
+  box-sizing: border-box;
+}
+
+.label-thumb-list .label-thumb-item .img-wrapper {
+  border:1px solid #eee;
+}
+.label-thumb-list .label-thumb-item .img-wrapper image {
+  width:27vw;
+  height:27vw;
+}
+.label-thumb-list .label-thumb-item text {
+  text-align: center;
+  font-size: 3vw;
+}
+.nav-list {
+  padding: 0 3vw;
+}
+.nav-list-item {
+  text-align: center;
+  display: inline-block;
+  width: 23vw;
+}
+
+.nav-list-item image {
+  width: 15vw;
+  height: 15vw;
+  display: block;
+  margin: 4vw;
+  margin-bottom: 1vw;
+}
+
+.nav-list-item text {
+  font-size: 4vw;
 }

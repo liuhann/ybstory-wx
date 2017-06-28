@@ -1,43 +1,57 @@
 const datasource = require('../../utils/datasource.js');
-
+const config = require('../../utils/config.js');
 //index.js
 //获取应用实例
-var app = getApp()
+var app = getApp();
 Page({
   data: {
+    imgServer: config.IMAGE_SERVER,
+    swiper: {
+      inicatorActiveColor: '#fff',
+      indicatorDots: true,
+      autoplay: true,
+      interval: 5000,
+      duration: 500
+    },
     imgUrls: [
-      
+
     ],
-    indicatorDots: false,
-    autoplay: false,
-    interval: 5000,
-    duration: 1000,
-    motto: 'Hello World',
+    labelThumbs:[],
     userInfo: {}
   },
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+
   },
+
+    goAlbumsList: function() {
+        wx.navigateTo({
+            url: '../albumlist/index'
+        });
+    },
+
+  goPlay: function(event) {
+    let story = event.currentTarget.dataset.story;
+    app.currentStory = story;
+    wx.navigateTo({
+        url: '../player/index?artist=' + story.artist + '&path=' + story.path + '&title=' + story.title + '&cover=' + story.cover
+    });
+  },
+
   onLoad: function () {
+      wx.setNavigationBarTitle({
+          title: '元宝故事'
+      });
     datasource.home((homeData) => {
       let swiperImages = [];
       for(var i=0; i<homeData.homesAlbum.length; i++) {
-        swiperImages.push(homeData.homesAlbum[i].cover)
+        swiperImages.push(config.IMAGE_SERVER + '/' + homeData.homesAlbum[i].cover + '.png@w_480');
       }
-      
-      this.setData(homeData);
-    });
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
 
-      that.setData({
-        userInfo:userInfo
-      })
-    })
+      this.setData({
+        imgUrls:swiperImages,
+        labelThumbs: homeData.list
+      });
+    });
   }
-})
+});

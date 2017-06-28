@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="album-cover">
+    <view class="album-cover-image">
+      <image src="{{albumCover}}"></image>
+    </view>
+    <text class="album-cover-title">{{albumName}}</text>
+  </view>
+
+  <view class="album-list">
+      <view class="label-thumb-item" wx:for="{{stories}}" wx:key="_id" bindtap="goPlay" data-story="{{item}}">
+        <view class="img-wrapper">
+          <image src="{{imgServer + '/' + item.cover + '.png@w_120'}}" class="story-image" />
+        </view>
+        <text>{{item.title}}</text>
+      </view>
+  </view>
+
+</view>

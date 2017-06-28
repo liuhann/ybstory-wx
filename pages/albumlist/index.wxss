@@ -1,0 +1,18 @@
+.album-list {
+  padding: 3vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.album-list .album-list-item {
+  width: 47vw;
+}
+
+.album-list .album-list-item text{
+  font-size: 4vw;
+}
+.album-list .album-list-item image {
+  width: 46vw;
+  height: 23vw;
+}
+

@@ -11,6 +11,23 @@ function home(callback) {
   });
 }
 
+
+function listAlbum(callback) {
+  wx.request({
+    url: API_SERVER + '/album/list',
+    success: function(res) {
+      callback(res.data);
+    }
+  })
+}
+
+function filterStory(filter, callback) {
+  wx.request({
+    url: API_SERVER + '/story/list'
+  })
+}
+
 module.exports = {
-  home: home
+    home: home,
+    listAlbum:listAlbum
 };
