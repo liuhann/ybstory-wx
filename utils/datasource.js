@@ -5,7 +5,7 @@ const utils = require('./util');
 
 function home(callback) {
   wx.request({
-    url: API_SERVER + '/home?labels=今日推荐,精选',
+    url: API_SERVER + '/home?labels=' + encodeURIComponent('今日推荐,精选'),
     success: function(res){
       callback(res.data);
     }

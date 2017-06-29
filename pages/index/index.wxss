@@ -9,6 +9,21 @@ swiper image {
   height: 375rpx;
 }
 
+swiper-item {
+  position: relative;
+}
+
+swiper-item text {
+  position: absolute;
+  left: 3vw;
+  bottom: 3vw;
+  padding: 1vw 3vw;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 4vw;
+}
+
+
 /**index.wxss**/
 .userinfo {
   display: flex;
