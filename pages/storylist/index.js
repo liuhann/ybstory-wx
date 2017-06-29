@@ -31,6 +31,11 @@ Page({
         if (this.data.skip>this.data.total) {
             return;
         }
+
+        if (this.data.loading) {
+            return;
+        }
+
         this.setData({
             loading: true
         });

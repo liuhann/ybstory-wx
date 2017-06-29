@@ -46,6 +46,12 @@ Page({
         });
     },
 
+    goFavorites: function () {
+        wx.navigateTo({
+            url: '../favorites/index'
+        });
+    },
+
   goPlay: function(event) {
     let story = event.currentTarget.dataset.story;
     app.currentStory = story;

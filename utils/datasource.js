@@ -13,6 +13,52 @@ function home(callback) {
 }
 
 
+function getFavorites() {
+    let favs = wx.getStorageSync('favorites');
+    return favs || [];
+}
+
+function isFavorite(id) {
+    let favorites = getFavorites();
+    for(let i=0; i<favorites.length; i++) {
+        if (id === favorites[i]._id) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+function addToFavorite(story) {
+    let favorites = getFavorites();
+    for(let i=0; i<favorites.length; i++) {
+        if (story._id === favorites[i]._id) {
+            return;
+        }
+    }
+    delete story.desc;
+    favorites.push(story);
+    wx.setStorage({
+        key: 'favorites',
+        data: favorites
+    });
+}
+
+function removeFavorite(story) {
+    let favorites = getFavorites();
+    for(let i=0; i<favorites.length; i++) {
+        if (story._id === favorites[i]._id) {
+            favorites.splice(i);
+            break;
+        }
+    }
+    wx.setStorage({
+        key: 'favorites',
+        data: favorites
+    });
+}
+
+
 function listAlbum(callback) {
   wx.request({
     url: API_SERVER + '/album/list',
@@ -33,6 +79,10 @@ function filterStory(filter, callback) {
 }
 
 module.exports = {
+    getFavorites: getFavorites,
+    addToFavorite: addToFavorite,
+    removeFavorite: removeFavorite,
+    isFavorite: isFavorite,
     home: home,
     listAlbum:listAlbum,
     filterStory: filterStory

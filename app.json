@@ -5,7 +5,8 @@
     "pages/albumlist/index",
     "pages/album/index",
     "pages/storylist/index",
-    "pages/labels/index"
+    "pages/labels/index",
+    "pages/favorites/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

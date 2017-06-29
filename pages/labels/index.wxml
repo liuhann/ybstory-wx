@@ -6,9 +6,11 @@
         <text>{{item.dim}}</text>
     </view>
     <view class="labels">
-      <view class="label" wx:for-index="idx" wx:for-item="label" wx:for="{{item.list}}" bindtap="openLabel">
-        {{label}}
-      </view>
+        <block wx:for-index="idx" wx:for-item="label" wx:for="{{item.list}}">
+          <view class="label" data-label="{{label}}" bindtap="openLabel">
+            {{label}}
+          </view>
+        </block>
     </view>
   </view>
 

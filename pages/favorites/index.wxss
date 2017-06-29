@@ -1,0 +1,23 @@
+.album-list {
+  padding: 2vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.album-list .label-thumb-item {
+  width:32vw;
+  padding:1vw;
+  box-sizing:border-box;
+  text-align:center;
+}
+
+.album-list .label-thumb-item image {
+  width: 28vw;
+  height: 28vw;
+  border-radius: 2vw;
+  border: 1px solid #ccc;
+}
+
+.album-list .label-thumb-item text {
+  font-size: 3vw;
+}

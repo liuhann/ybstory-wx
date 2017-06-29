@@ -23,7 +23,7 @@
       <image src="../../images/tag.svg"></image>
       <text>标签</text>
     </view>
-    <view class="nav-list-item">
+    <view class="nav-list-item" bindtap="goFavorites">
       <image src="../../images/star.svg"></image>
       <text>收藏</text>
     </view>

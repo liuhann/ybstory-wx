@@ -12,6 +12,13 @@ Page({
         });
     },
 
+    openLabel: function(event) {
+        let label = event.currentTarget.dataset.label;
+        wx.navigateTo({
+            url: '../storylist/index?title=' + label + '&label=' + label
+        });
+    },
+
     onReady: function() {
         wx.setNavigationBarTitle({
             title: '故事分类'
