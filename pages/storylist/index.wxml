@@ -1,12 +1,5 @@
 <!--index.wxml-->
 <scroll-view class="container" scroll-y="true" lower-threshold="200" enable-back-to-top="true" bindscrolltolower="scrolledToEnd">
-  <view class="album-cover">
-    <view class="album-cover-image">
-      <image src="{{albumCover}}"></image>
-    </view>
-    <text class="album-cover-title">{{albumName}}</text>
-  </view>
-
   <view class="album-list">
       <view class="label-thumb-item" wx:for="{{stories}}" wx:key="_id" wx:if="{{item.cover}}" bindtap="goPlay" data-story="{{item}}">
         <view class="img-wrapper">

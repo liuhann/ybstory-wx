@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="album-list">
-    <view class="album-list-item" wx:for="{{albums}}" wx:key="_id" data-album="{{item}}" bindtap="openAlbum">
+    <view class="album-list-item" wx:for="{{albums}}" wx:if="{{item.cover}}" wx:key="_id" data-album="{{item}}" bindtap="openAlbum">
       <image src="{{imgServer + '/' + item.cover + '.png@w_200'}}"></image>
       <text>{{item.name}}</text>
     </view>

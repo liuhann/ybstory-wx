@@ -4,8 +4,7 @@ var app = getApp();
 Page({
     data: {
         imgServer: config.IMAGE_SERVER,
-        albumCover: null,
-        albumName: null,
+        filter: {},
         skip: 0,
         total: 1000000,
         loading: false,
@@ -35,10 +34,9 @@ Page({
         this.setData({
             loading: true
         });
-        datasource.filterStory({
-            album: this.options.name,
-            skip: this.data.skip
-        }, (list, pageTotal) => {
+        this.data.filter.skip = this.data.skip;
+        datasource.filterStory(this.data.filter,
+            (list, pageTotal) => {
             this.setData({
                 loading: false,
                 skip: this.data.skip + 18,
@@ -50,14 +48,15 @@ Page({
 
     onReady: function() {
         wx.setNavigationBarTitle({
-            title: '专辑:' + this.options.name
+            title: this.options.title
         });
-
-        this.setData({
-            albumCover: config.IMAGE_SERVER + '/' + this.options.cover + '.png@w_420,q_80',
-            albumName: this.options.name
-        });
-        this.fetchMoreStories();
-
+        if (this.options.label) {
+            this.setData({
+                filter: {
+                    label: this.options.label
+                }
+            });
+            this.fetchMoreStories();
+        }
     },
 });

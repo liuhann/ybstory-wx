@@ -24,6 +24,18 @@ Page({
 
   },
 
+    goLabelHot: function() {
+        wx.navigateTo({
+            url: '../storylist/index?title=热门故事&label=精选'
+        });
+    },
+
+    goAllLabel: function () {
+        wx.navigateTo({
+            url: '../labels/index'
+        });
+    },
+
     goAlbumsList: function() {
         wx.navigateTo({
             url: '../albumlist/index'

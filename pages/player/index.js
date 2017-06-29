@@ -6,6 +6,10 @@ var app = getApp();
 
 Page({
   onReady: function() {
+      wx.setNavigationBarTitle({
+          title: this.options.title
+      });
+
       this.audioCtx = wx.createAudioContext('myAudio');
       this.setData({
           cover: config.IMAGE_SERVER + '/' + this.options.cover + '.png@w_420,q_80',

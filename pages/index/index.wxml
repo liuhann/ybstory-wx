@@ -10,7 +10,7 @@
   </swiper>
 
   <view class="nav-list">
-    <view class="nav-list-item">
+    <view class="nav-list-item" bindtap="goLabelHot">
       <image src="../../images/diamond.svg"></image>
       <text>热门</text>
     </view>
@@ -18,7 +18,7 @@
       <image src="../../images/album.svg"></image>
       <text>专辑</text>
     </view>
-    <view class="nav-list-item">
+    <view class="nav-list-item" bindtap="goAllLabel">
       <image src="../../images/tag.svg"></image>
       <text>标签</text>
     </view>

@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<scroll-view class="container" scroll-y="true" enable-back-to-top="true">
+  <view class="dimension" wx:for="{{labels}}" wx:key="dim" wx:for-item="item">
+    <view class="dim">
+        <image src="../../images/{{item.icon}}"></image>
+        <text>{{item.dim}}</text>
+    </view>
+    <view class="labels">
+      <view class="label" wx:for-index="idx" wx:for-item="label" wx:for="{{item.list}}" bindtap="openLabel">
+        {{label}}
+      </view>
+    </view>
+  </view>
+
+</scroll-view>

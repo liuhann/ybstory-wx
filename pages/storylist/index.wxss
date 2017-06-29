@@ -1,25 +1,3 @@
-.album-cover {
-  width: 100vw;
-  height: 50vw;
-  position: relative;
-}
-
-.album-cover .album-cover-image image {
-  width: 100vw;
-  height: 50vw;
-}
-
-.album-cover .album-cover-title {
-  position: absolute;
-  bottom: 1vw;
-  padding: 0vw 3vw;
-  left: 1vw;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.6);
-  font-size: 5vw;
-}
-
-
 .album-list {
   padding: 2vw;
   display: flex;

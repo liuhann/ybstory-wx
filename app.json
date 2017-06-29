@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/player/index",
     "pages/albumlist/index",
-    "pages/album/index"
+    "pages/album/index",
+    "pages/storylist/index",
+    "pages/labels/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
